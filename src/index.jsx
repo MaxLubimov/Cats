@@ -8,23 +8,23 @@ import './index.css';
 
 function App() {
   const dispatch = useDispatch();
-  const [fetching, setFetcing] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1)
-  const [active, setActive] = useState(false)
-  const [Selection, setSelection] = useState('allCats')
+  const [fetching, setFetching] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [active, setActive] = useState(false);
+  const [Selection, setSelection] = useState('allCats');
 
   // подписка на скролл
   useEffect(() => {
-    document.addEventListener('scroll', scrollHander)
+    document.addEventListener('scroll', scrollHander);
     return function () {
-      document.removeEventListener('scroll', scrollHander)
+      document.removeEventListener('scroll', scrollHander);
     };
-  }, [])
+  }, []);
 
   useEffect(() => {
     for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
-      dispatch(addToLikePost(key, localStorage.getItem(key)))
+      dispatch(addToLikePost(key, localStorage.getItem(key)));
     }
   })
 
@@ -35,27 +35,27 @@ function App() {
         let res = await fetch(
           `https://api.thecatapi.com/v1/images/search?limit=20&page=${currentPage}`
         );
-        setCurrentPage(prevState => prevState + 1)
+        setCurrentPage(prevState => prevState + 1);
         let response = await res.json();
         dispatch(allPosts(response));
       };
-      fetchData().finally(() => setFetcing(false));
+      fetchData().finally(() => setFetching(false));
     }
   }, [fetching]);
   ;
 
   // проверка конца страницы
   const scrollHander = (e) => {
-    if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) { setFetcing(true) }
-  }
+    if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) { setFetching(true) };
+  };
 
   //тоггл вкладки
   const toggleContent = (event) => {
     const currentState = active;
     event.preventDefault();
-    setSelection(event.target.value)
-    setActive(!currentState)
-  }
+    setSelection(event.target.value);
+    setActive(!currentState);
+  };
 
   // отображение нужной вкладки
   const switchContent = (value) => {
@@ -66,8 +66,8 @@ function App() {
         return <FavoriteList />;
       default:
         return null;
-    }
-  }
+    };
+  };
 
   return (
     <>
@@ -79,9 +79,9 @@ function App() {
           </div>
         </div>
       </header >
-      { switchContent(Selection)}
+      {switchContent(Selection)}
     </>
-  )
+  );
 }
 
 const rootElement = document.querySelector('#root');

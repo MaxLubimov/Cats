@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class Header extends Component {
   constructor(props) {
     super(props);
-    // this.toggleClass = this.toggleClass.bind(this);
     this.state = {
       Selection: 'allCats',
       active: false,
     };
   }
+
+
   toggleClass = (event) => {
     const currentState = this.state.active;
     event.preventDefault();
