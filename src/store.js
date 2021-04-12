@@ -1,4 +1,4 @@
-import { createStore } from 'redux'
+import { createStore } from 'redux';
 
 const likePost = (id, url) => {
   return {
@@ -78,16 +78,16 @@ const likeRducer = (state = initState, action) => {
 
 // добавление/удаление поста из стор
 export const liked = (id, url, event) => {
-  localStorage.setItem(id, url)
+  localStorage.setItem(id, url);
   store.dispatch(likePost(id, url));
   event.target.classList.toggle('unlike');
-  event.target.classList.toggle('like')
-}
+  event.target.classList.toggle('like');
+};
 
 const store = createStore(
   likeRducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-)
+);
 
 export default store;
 

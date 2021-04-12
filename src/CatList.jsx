@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { liked, allPosts } from './store'
+import { liked } from './store'
 
 // рендер всех котиков
 class CatList extends Component {
@@ -32,14 +32,8 @@ class CatList extends Component {
   }
 }
 
-
-const mapDispatch = {
-  createPost: allPosts,
-}
-
 export default connect(
   state => ({
     Store: state
-  }),
-  mapDispatch
+  })
 )(CatList)
