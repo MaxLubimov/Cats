@@ -3,7 +3,7 @@ import { Provider, useDispatch } from 'react-redux'
 import ReactDOM from 'react-dom';
 import CatList from './CatList'
 import FavoriteList from './FavortieList'
-import store, { allPosts } from './store'
+import store, { allPosts, addToLikePost } from './store'
 import './index.css';
 
 function App() {
@@ -20,6 +20,13 @@ function App() {
       document.removeEventListener('scroll', scrollHander)
     };
   }, [])
+
+  useEffect(() => {
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      dispatch(addToLikePost(key, localStorage.getItem(key)))
+    }
+  })
 
   // загрузка данных + диспатч в стор
   useEffect(() => {

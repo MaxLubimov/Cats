@@ -10,6 +10,17 @@ const likePost = (id, url) => {
   };
 };
 
+// добавляет данные иp localStorage о лайкнутых котах
+export const addToLikePost = (id, url) => {
+  return {
+    type: 'ADD_TOO_LIKE_POST',
+    payload: {
+      id,
+      url,
+    }
+  };
+};
+
 export const allPosts = (data) => {
   return {
     type: 'ALLPOSTS',
@@ -28,15 +39,32 @@ const initState = {
 const likeRducer = (state = initState, action) => {
   switch (action.type) {
     case 'TOOGLE_LIKE':
-      const newSelecredIds = state.likedPosts.some(ids => ids.id === action.payload.id)
-        ? state.likedPosts.filter(ids => ids.id !== action.payload.id)
+      let newSelecredIds
+      if (state.likedPosts.some(ids => ids.id === action.payload.id)) {
+        localStorage.removeItem(action.payload.id)
+        newSelecredIds = state.likedPosts.filter(ids => ids.id !== action.payload.id)
+      }
+      else {
+        localStorage.setItem(action.payload.id, action.payload.url)
+        newSelecredIds = state.likedPosts.concat({
+          id: action.payload.id,
+          url: action.payload.url
+        })
+      }
+      return {
+        ...state,
+        likedPosts: newSelecredIds,
+      };
+    case 'ADD_TOO_LIKE_POST':
+      let addLikePost = state.likedPosts.some(ids => ids.id === action.payload.id)
+        ? state.likedPosts
         : state.likedPosts.concat({
           id: action.payload.id,
           url: action.payload.url
         })
       return {
         ...state,
-        likedPosts: newSelecredIds,
+        likedPosts: addLikePost
       };
     case 'ALLPOSTS':
       return {
@@ -50,6 +78,7 @@ const likeRducer = (state = initState, action) => {
 
 // добавление/удаление поста из стор
 export const liked = (id, url, event) => {
+  localStorage.setItem(id, url)
   store.dispatch(likePost(id, url));
   event.target.classList.toggle('unlike');
   event.target.classList.toggle('like')
@@ -61,3 +90,4 @@ const store = createStore(
 )
 
 export default store;
+
