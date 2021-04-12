@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Header extends Component {
   constructor(props) {
     super(props);
-    // this.toggleClass = this.toggleClass.bind(this);
     this.state = {
       Selection: 'allCats',
       active: false,
@@ -20,7 +19,6 @@ class Header extends Component {
 
   render() {
     const { Selection } = this.state;
-    console.log(Selection);
     return (
       <header className="header" >
         <div className="container">
