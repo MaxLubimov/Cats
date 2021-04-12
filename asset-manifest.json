@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Cats/static/css/main.6f2271a3.chunk.css",
-    "main.js": "/Cats/static/js/main.f5f80abb.chunk.js",
-    "main.js.map": "/Cats/static/js/main.f5f80abb.chunk.js.map",
-    "runtime-main.js": "/Cats/static/js/runtime-main.a31c4721.js",
-    "runtime-main.js.map": "/Cats/static/js/runtime-main.a31c4721.js.map",
-    "static/js/2.8455225b.chunk.js": "/Cats/static/js/2.8455225b.chunk.js",
-    "static/js/2.8455225b.chunk.js.map": "/Cats/static/js/2.8455225b.chunk.js.map",
-    "index.html": "/Cats/index.html",
-    "static/css/main.6f2271a3.chunk.css.map": "/Cats/static/css/main.6f2271a3.chunk.css.map",
-    "static/js/2.8455225b.chunk.js.LICENSE.txt": "/Cats/static/js/2.8455225b.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/Cats/static/media/heart_hover.8220379c.svg"
+    "main.css": "/frontend-challenge/static/css/main.bd080c7f.chunk.css",
+    "main.js": "/frontend-challenge/static/js/main.f5f80abb.chunk.js",
+    "main.js.map": "/frontend-challenge/static/js/main.f5f80abb.chunk.js.map",
+    "runtime-main.js": "/frontend-challenge/static/js/runtime-main.79be11ad.js",
+    "runtime-main.js.map": "/frontend-challenge/static/js/runtime-main.79be11ad.js.map",
+    "static/js/2.8455225b.chunk.js": "/frontend-challenge/static/js/2.8455225b.chunk.js",
+    "static/js/2.8455225b.chunk.js.map": "/frontend-challenge/static/js/2.8455225b.chunk.js.map",
+    "index.html": "/frontend-challenge/index.html",
+    "static/css/main.bd080c7f.chunk.css.map": "/frontend-challenge/static/css/main.bd080c7f.chunk.css.map",
+    "static/js/2.8455225b.chunk.js.LICENSE.txt": "/frontend-challenge/static/js/2.8455225b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/frontend-challenge/static/media/heart_hover.8220379c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a31c4721.js",
+    "static/js/runtime-main.79be11ad.js",
     "static/js/2.8455225b.chunk.js",
-    "static/css/main.6f2271a3.chunk.css",
+    "static/css/main.bd080c7f.chunk.css",
     "static/js/main.f5f80abb.chunk.js"
   ]
 }
