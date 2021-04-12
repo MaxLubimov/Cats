@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Cats/static/css/main.6f2271a3.chunk.css",
+    "main.js": "/Cats/static/js/main.f5f80abb.chunk.js",
+    "main.js.map": "/Cats/static/js/main.f5f80abb.chunk.js.map",
+    "runtime-main.js": "/Cats/static/js/runtime-main.a31c4721.js",
+    "runtime-main.js.map": "/Cats/static/js/runtime-main.a31c4721.js.map",
+    "static/js/2.8455225b.chunk.js": "/Cats/static/js/2.8455225b.chunk.js",
+    "static/js/2.8455225b.chunk.js.map": "/Cats/static/js/2.8455225b.chunk.js.map",
+    "index.html": "/Cats/index.html",
+    "static/css/main.6f2271a3.chunk.css.map": "/Cats/static/css/main.6f2271a3.chunk.css.map",
+    "static/js/2.8455225b.chunk.js.LICENSE.txt": "/Cats/static/js/2.8455225b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Cats/static/media/heart_hover.8220379c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a31c4721.js",
+    "static/js/2.8455225b.chunk.js",
+    "static/css/main.6f2271a3.chunk.css",
+    "static/js/main.f5f80abb.chunk.js"
+  ]
+}
