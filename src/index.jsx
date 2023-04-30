@@ -32,18 +32,26 @@ function App() {
   useEffect(() => {
     if (fetching) {
       const fetchData = async () => {
-        let res = await fetch(
-          `https://api.thecatapi.com/v1/images/search?limit=20&page=${currentPage}`
+        let res1 = await fetch(
+          `https://api.thecatapi.com/v1/images/search?limit=10&page=${currentPage}`
         );
+        let response1 = await res1.json();
+        let response2 = []
+        if (window.innerHeight > 600) {
+          let res2 = await fetch(
+            `https://api.thecatapi.com/v1/images/search?limit=10&page=${currentPage}`
+          );
+          response2 = await res2.json();
+        }
+        let response = [...response1, ...response2]
         setCurrentPage(prevState => prevState + 1);
-        let response = await res.json();
         dispatch(allPosts(response));
       };
       fetchData().finally(() => setFetching(false));
     }
   }, [fetching]);
   ;
-
+  console.log(window.innerHeight)
   // проверка конца страницы
   const scrollHander = (e) => {
     if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) { setFetching(true) };
