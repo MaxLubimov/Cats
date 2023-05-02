@@ -7,7 +7,7 @@
 - CSS
 - JavaScript (JSX)
 
-### Библиотеки
+## Библиотеки
 - React (c ипользованием хуков)
 - React-redux
 
